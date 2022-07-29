@@ -1,0 +1,10 @@
+.header__area{
+    display: flex;
+    gap: 20px;
+}
+
+.header__menu-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
