@@ -1,0 +1,1 @@
+# Desafio para vaga de desenvolvedor front-end Jr. na empresa S2 Holding
