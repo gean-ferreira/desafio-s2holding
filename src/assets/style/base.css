@@ -1,0 +1,37 @@
+/* Neste arquivo estão as variáveis globais de CSS da aplicação */
+
+:root {
+    /* Texts */
+    --text-color-primary: rgb(67, 65, 65); /* Cor extraída do site cantao.com.br */
+    /* Colors */
+    --color-primary:#a6564d;
+    --color-secondary:rgb(242, 183, 81);
+    --color-neutral: #ffffff;
+    /* Sizes */
+    --px-1: 0 24px;
+    --px-2: 0 32px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-color-primary);
+}
+
+ul {
+    list-style: none;
+}
+
+a,
+li {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
