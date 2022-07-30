@@ -18,10 +18,16 @@ li {
 .px-2 {
   padding: 0 50px;
 }
+
+.space {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
-.container {
-  padding: 0 50px;
+.header__menu-list,
+.middle__menu-list,
+.products__menu-list {
+  list-style: none;
 }
 
 #header {
@@ -79,5 +85,17 @@ li {
     display: grid;
     grid-template-columns: 3fr 3fr 3fr 3fr;
     column-gap: 24px;
+  }
+}
+
+@media (min-width:1400px) {
+  .container {
+    width: 1400px;
+    margin: auto;
+  }
+
+  .space {
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 }
