@@ -1,5 +1,3 @@
-import './style.css';
-
 function App() {
   return (
     <h1>Sou o App!</h1>
