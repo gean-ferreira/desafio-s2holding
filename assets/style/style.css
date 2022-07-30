@@ -50,3 +50,10 @@ li {
   color: white;
   text-transform: uppercase;
 }
+
+.middle__menu-list {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 30px 60px;
+}
+
