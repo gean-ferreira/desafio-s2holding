@@ -1,0 +1,29 @@
+#header {
+    background-color: var(--color-primary);
+    position: fixed;
+    width: 100%;
+}
+
+.header__area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__logo-img {
+    width: auto;
+}
+
+.header__menu-list {
+    display: flex;
+    gap: 30px;
+}
+
+.header__menu-list li a {
+    color: var(--color-neutral);
+    text-transform: uppercase;
+}
+
+.header__menu-list li a:hover {
+    border-bottom: 1px solid;
+}
