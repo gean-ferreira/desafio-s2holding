@@ -1,7 +1,9 @@
+import { Navbar } from './components/Navbar/index.js'
+
 function App() {
   return (
-    <h1>Sou o App!</h1>
-    );
+    <Navbar />
+  );
 }
 
 export default App;
