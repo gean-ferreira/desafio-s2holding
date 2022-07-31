@@ -4,8 +4,8 @@
     /* Texts */
     --text-color-primary: rgb(67, 65, 65); /* Cor extraída do site cantao.com.br */
     /* Colors */
-    --color-primary:#a6564d;
-    --color-secondary:rgb(242, 183, 81);
+    --color-primary: #a6564d;
+    --color-secondary: rgb(242, 183, 81);
     --color-neutral: #ffffff;
     /* Sizes */
     --px-1: 0 24px;
@@ -29,7 +29,7 @@ ul {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
