@@ -1,2 +1,18 @@
 @import './base.css';
 
+.space {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width:1400px) {
+  .container {
+    width: 1400px;
+    margin: auto;
+  }
+
+  .space {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
