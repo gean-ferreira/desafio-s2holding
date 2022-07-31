@@ -5,6 +5,10 @@
   margin-bottom: 24px;
 }
 
+.px-1 {
+  padding: var(--px-1);
+}
+
 @media (min-width:1400px) {
   .container {
     width: 1400px;
