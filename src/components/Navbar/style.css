@@ -1,6 +1,7 @@
 #header {
     background-color: var(--color-primary);
     position: fixed;
+    z-index: 2;
     width: 100%;
 }
 
@@ -21,7 +22,7 @@
 
 .header__menu-list li a {
     color: var(--color-neutral);
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .header__menu-list li a:hover {
