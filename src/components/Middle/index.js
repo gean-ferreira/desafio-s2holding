@@ -26,9 +26,7 @@ export const Middle = () => {
 
     return (
         <section id="middle" className="middle__area container space">
-            <ul className="middle__menu-list px-1">
-                {itemsMiddle()}
-            </ul>
+            <h2 className='title'>Middle</h2>
         </section>
     )
 }
