@@ -1,4 +1,4 @@
-  #banner a img {
+  #banner  {
     background-image: url(../../assets/imgs/banners/banner-full-mobile.jpg);
     min-height: 620px;
     width: 100%;
@@ -9,9 +9,8 @@
 
 
   @media (min-width:768px) {
-
-    #banner a img {
-        background-image: url(../../assets/imgs/banners/banner-full-desktop.jpg);
-        min-height: 665px;
+    #banner {
+      background-image: url(../../assets/imgs/banners/banner-full-desktop.jpg);
+      min-height: 665px;
     }
   }
