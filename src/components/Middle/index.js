@@ -3,6 +3,8 @@ import img1 from '../../assets/imgs/middle/middle-1.jpg'
 import img2 from '../../assets/imgs/middle/middle-2.jpg'
 import img3 from '../../assets/imgs/middle/middle-3.jpg'
 import img4 from '../../assets/imgs/middle/middle-4.jpg'
+import { isMobile } from '../../assets/scripts/functions'
+import Carousel from 'nuka-carousel/lib/carousel'
 
 export const Middle = () => {
 
@@ -18,10 +20,21 @@ export const Middle = () => {
                         <a href="http://cantao.com.br" target="_blank" rel="noopener noreferrer">
                             <img width="100%" height="auto" src={res} alt={`Imagem do meio ${index}`} />
                         </a>
-                    </li>    
+                    </li>
                 )
             })
         )
+    }
+
+    // Estilização dos botões do Carousel
+    const stylebuttons = {
+        default: { fontSize: '35px', fontWeight: 'bold' },
+        rightButton: function () {
+            return { ...this.default, borderRadius: '50% 0 0 50%', padding: '10px 5px 10px 15px' }
+        },
+        leftButton: function () {
+            return { ...this.default, borderRadius: '0 50% 50% 0', padding: '10px 15px  10px 5px ' }
+        }
     }
 
     // Função que observa se o usuário está no mobile
