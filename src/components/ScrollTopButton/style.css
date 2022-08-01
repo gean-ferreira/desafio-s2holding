@@ -1,0 +1,11 @@
+#toTopButton {
+    position: fixed;
+    bottom: 64px;
+    right: 24px;
+    z-index: 3;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--color-primary);
+    opacity: .95;
+    cursor: pointer;
+}
