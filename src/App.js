@@ -8,12 +8,12 @@ import { Title } from './components/Title/index.js';
 function App() {
   return (
     <>
+      <ScrollTopButton />
       <Banner />
       <Middle />
       <Products />
       <Title />
       <Footer />
-      <ScrollTopButton />
     </>
   );
 }
