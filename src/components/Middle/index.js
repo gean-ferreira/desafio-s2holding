@@ -24,9 +24,33 @@ export const Middle = () => {
         )
     }
 
+    // Função que observa se o usuário está no mobile
+    // Mobile: a função renderiza as imagens dentro de uma lib de Carousel
+    // Desktop: renderiza a sessão em duas colunas
+    function renderSection() {
+        return isMobile() ?
+            <Carousel
+                autoplay={true}
+                dragThreshold={0.1}
+                wrapAround={true}
+                defaultControlsConfig={{
+                    pagingDotsStyle: { display: 'none' },
+                    nextButtonStyle: stylebuttons.rightButton(),
+                    nextButtonText: '>',
+                    prevButtonStyle: stylebuttons.leftButton(),
+                    prevButtonText: '<',
+                }} >
+                {itemsMiddle()}
+            </Carousel> :
+            (<ul className="middle__menu-list px-1">
+                {itemsMiddle()}
+            </ul>)
+    }
+
     return (
         <section id="middle" className="middle__area container space">
             <h2 className='title'>Middle</h2>
+            {renderSection()}
         </section>
     )
 }
