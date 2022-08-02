@@ -1,13 +1,13 @@
 {
   "trailingComma": "es5",
-  "tabWidth": 2,
+  "tabWidth": 4,
   "semi": true,
   "singleQuote": true,
   "printWidth": 140,
   "jsxSingleQuote": true,
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
   "overrides": [
     {
       "files": ["*.html"],
@@ -20,7 +20,7 @@
       "files": ["*.jsx"],
       "options": {
         "trailingComma": "es5",
-        "tabWidth": 2,
+        "tabWidth": 4,
         "semi": true,
         "singleQuote": true,
         "printWidth": 140,
@@ -28,6 +28,12 @@
         "bracketSpacing": true,
         "arrowParens": "avoid",
         "singleAttributePerLine": true
+      }
+    },
+    {
+      "files": ["*.css", "*.json"],
+      "options": {
+        "tabWidth": 2
       }
     }
   ]
