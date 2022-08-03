@@ -2,7 +2,7 @@ import './style.css';
 
 export const Title = () => {
     return (
-        <section id="title" className="apresentation__area container space">
+        <section id="title" className="apresentation__area container space px-1">
             <h2 className="title apresentation__title">O melhor site do Brasil!</h2>
             <p className="description__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, inventore maiores
                 laboriosam dolor sapiente modi sint nostrum accusantium quaerat, eum deleniti officia sequi ducimus optio a rem,
