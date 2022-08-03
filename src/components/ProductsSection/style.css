@@ -1,9 +1,18 @@
-.products__menu-list {
-    display: grid;
-    grid-template-columns: 12fr;
+/* Container dos produtos no centro */
+.products__menu-list li {
+    justify-content: center;
 }
 
+/* Os produtos irá ser apresentado de 4 em 4 na tela */
 @media (min-width:768px) {
+    .products__menu-list {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr;
+        column-gap: 24px;
+    }
+}
+
+@media (min-width:1200px) {
     .products__menu-list {
         display: grid;
         grid-template-columns: 3fr 3fr 3fr 3fr;
