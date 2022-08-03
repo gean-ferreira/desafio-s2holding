@@ -14,11 +14,9 @@ export const Middle = () => {
     // Lista os itens da sessão Middle
     function itemsMiddle() {
         return (
-            imgsMiddle.map((res, index) => {
-                return (
-                    <li key={index} className="middle__items">
-                        <a href="http://cantao.com.br" target="_blank" rel="noopener noreferrer">
-                            <img width="100%" height="auto" src={res} alt={`Imagem do meio ${index}`} />
+              <div className='banner-bottom__image'>
+                <span>Confira nossa categoria {index + 1}!</span>
+              </div>
                         </a>
                     </li>
                 )
