@@ -1,5 +1,5 @@
 import './style.css';
-import { convertToReal } from '../../assets/scripts/functions';
+import { functions } from '../../assets/scripts/index';
 
 export const CardProduct = ({ link, image1, image2, name, price }) => {
     return (

@@ -3,13 +3,12 @@ import axios from 'axios';
 import './style.css';
 import { CardProduct } from '../CardProduct';
 import Carousel from 'nuka-carousel';
-import { isMobile } from '../../assets/scripts/functions';
-import { stylebuttons } from '../../assets/scripts/style';
+import { functions, style } from '../../assets/scripts/index';
 
 export const Products = () => {
     // Constante que armazenará todos os produtos
     const [products, setProducts] = useState([]);
-    const [show, setShow] = useState(isMobile());
+    const [show, setShow] = useState(functions.isMobile());
     // Url fornecida pelo desafio
     const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fC:65&_from=1&_to=50';
 
@@ -54,9 +53,9 @@ export const Products = () => {
                 wrapAround={true}
                 defaultControlsConfig={{
                     pagingDotsStyle: { display: 'none' },
-                    nextButtonStyle: stylebuttons.rightButton(),
+                    nextButtonStyle: style.stylebuttons.rightButton(),
                     nextButtonText: '>',
-                    prevButtonStyle: stylebuttons.leftButton(),
+                    prevButtonStyle: style.stylebuttons.leftButton(),
                     prevButtonText: '<',
                 }}
             >
@@ -69,7 +68,7 @@ export const Products = () => {
 
     // Função que observa se o usuário irá diminuir a tela de tamanho
     window.addEventListener('resize', () => {
-        setShow(isMobile());
+        setShow(functions.isMobile());
     });
 
     return (

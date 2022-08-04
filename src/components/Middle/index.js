@@ -3,15 +3,14 @@ import img1 from '../../assets/imgs/middle/middle-1.jpg';
 import img2 from '../../assets/imgs/middle/middle-2.jpg';
 import img3 from '../../assets/imgs/middle/middle-3.jpg';
 import img4 from '../../assets/imgs/middle/middle-4.jpg';
-import { isMobile } from '../../assets/scripts/functions';
+import { functions, style } from '../../assets/scripts/index';
 import Carousel from 'nuka-carousel';
 import { useState } from 'react';
-import { stylebuttons } from '../../assets/scripts/style';
 
 export const Middle = () => {
     // Array com o caminho relativo das imagens
     const imgsMiddle = [img1, img2, img3, img4];
-    const [show, setShow] = useState(isMobile());
+    const [show, setShow] = useState(functions.isMobile());
 
     // Condicional que adiciona classe global para manipular o estilo do item
     const inTheLeft = index => (index % 2 ? '' : ' justify-content-end');
@@ -44,9 +43,9 @@ export const Middle = () => {
                 wrapAround={true}
                 defaultControlsConfig={{
                     pagingDotsStyle: { display: 'none' },
-                    nextButtonStyle: stylebuttons.rightButton(),
+                    nextButtonStyle: style.stylebuttons.rightButton(),
                     nextButtonText: '>',
-                    prevButtonStyle: stylebuttons.leftButton(),
+                    prevButtonStyle: style.stylebuttons.leftButton(),
                     prevButtonText: '<',
                 }}
             >
@@ -59,7 +58,7 @@ export const Middle = () => {
 
     // Função que observa se o usuário irá diminuir a tela de tamanho
     window.addEventListener('resize', () => {
-        setShow(isMobile());
+        setShow(functions.isMobile());
     });
 
     return (
