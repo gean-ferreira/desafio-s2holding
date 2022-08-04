@@ -10,5 +10,9 @@ export const CardProduct = ({ link, image, name, price }) => {
         <p className='price__product'>{convertToReal(price)}</p>
       </a>
     </div>
+            <div className='details__product'>
+                <h5 className='title__details'>{name}</h5>
+                <span className='price__details'>{convertToReal(price)}</span>
+            </div>
   );
 };
