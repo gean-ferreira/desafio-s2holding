@@ -1,21 +1,22 @@
-/* Container dos produtos no centro */
+/* Container dos produtos */
 .products__menu-list li {
-    justify-content: center;
+  border: 1px solid gray;
 }
 
-/* Os produtos irá ser apresentado de 4 em 4 na tela */
-@media (min-width:768px) {
-    .products__menu-list {
-        display: grid;
-        grid-template-columns: 4fr 4fr 4fr;
-        column-gap: 24px;
-    }
+@media (min-width: 768px) {
+  /* Os produtos irão ser apresentados de 3 em 3 na tela */
+  .products__menu-list {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    gap: 24px;
+  }
 }
 
-@media (min-width:1200px) {
-    .products__menu-list {
-        display: grid;
-        grid-template-columns: 3fr 3fr 3fr 3fr;
-        column-gap: 24px;
-    }
+@media (min-width: 1200px) {
+  /* Os produtos irão ser apresentados de 4 em 4 na tela */
+  .products__menu-list {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    column-gap: 24px;
+  }
 }
