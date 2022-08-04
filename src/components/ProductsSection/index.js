@@ -1,24 +1,28 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 import './style.css';
 
 export const Products = () => {
+  // Constante que armazenará todos os produtos
+  const [products, setProducts] = useState([]);
+  // Url fornecida pelo desafio
+  const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fC:65&_from=1&_to=50';
 
-    const [products, setProducts] = useState([])
-    // const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fC:65&_from=1&_to=50'
-    const urlProducts = "https://jsonplaceholder.typicode.com/users/1/albums"
-
+  // Função que faz a requisição dos produtos
     const getAnswer = async () => {
+    await axios({
+      url: urlProducts,
+      method: 'GET',
+    }).then(response => {
+      setProducts(response.data);
+    });
+  };
         
-        //Com axios
-        const response = await axios({
-            url: urlProducts, method: 'GET'
-            , headers: {
-                "content-type": "application/json; charset=utf-8",
-                'Access-Control-Allow-Origin': 'no-cors'
-            }
-        })
-        console.log(response)
+  // Ciclo de vida do React
+  // Executa esta função toda vez que o componente for carregado
+  useEffect(() => {
+    getAnswer();
+  }, []);
 
         // Com fetch
         // const resp = await fetch(urlProducts)
