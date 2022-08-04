@@ -2,6 +2,44 @@
   min-height: 400px;
 }
 
+.image__middle {
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.1s;
+}
+
+.banner-bottom__image {
+  position: absolute;
+  background-color: var(--text-color-primary);
+  width: 100%;
+  bottom: 0;
+  height: 55px;
+  text-align: center;
+  transition: all 0.1s;
+}
+
+.banner-bottom__image span {
+  color: var(--color-neutral);
+  font-weight: bold;
+  display: block;
+  margin: 17px auto;
+  transition: all 0.1s;
+}
+
+.image__middle:hover {
+  opacity: 0.9;
+  box-shadow: 8px 8px 3px #aaaaaa;
+}
+
+.image__middle:hover .banner-bottom__image {
+  background-color: var(--color-secondary);
+}
+
+.image__middle:hover .banner-bottom__image span {
+  color: var(--text-color-primary);
+}
+
 @media (min-width: 768px) {
   .middle__menu-list {
     display: grid;
@@ -9,44 +47,8 @@
     border-radius: 5px;
     grid-template-columns: 6fr 6fr;
   }
-
   .image__middle {
-    position: relative;
-    overflow: hidden;
     border-radius: 5px;
-    opacity: 1;
-    transition: all 0.1s;
     max-width: 400px;
-  }
-  
-  .banner-bottom__image {
-    position: absolute;
-    background-color: var(--text-color-primary);
-    width: 100%;
-    bottom: 0;
-    height: 55px;
-    text-align: center;
-    transition: all 0.1s;
-  }
-
-  .banner-bottom__image span {
-    color: var(--color-neutral);
-    font-weight: bold;
-    display: block;
-    margin: 17px auto;
-    transition: all 0.1s;
-  }
-
-  .image__middle:hover {
-    opacity: 0.9;
-    box-shadow: 8px 8px 3px #aaaaaa;
-  }
-
-  .image__middle:hover .banner-bottom__image {
-    background-color: var(--color-secondary);
-  }
-
-  .image__middle:hover .banner-bottom__image span {
-    color: var(--text-color-primary);
   }
 }
