@@ -1,7 +1,7 @@
 import './style.css';
 import { functions } from '../../assets/scripts/index';
 
-export const CardProduct = ({ link, image1, image2, name, price }) => {
+export const CardProduct = ({ link, image1, image2, name, price, installment, installmentPrice }) => {
     return (
         <a className='link__product' href={link} target='_self' rel='noopener noreferrer'>
             {/* Container pai das imagens da animação 3D */}
@@ -18,7 +18,12 @@ export const CardProduct = ({ link, image1, image2, name, price }) => {
             {/* Detalhes do produto */}
             <div className='details__product'>
                 <h5 className='title__details'>{name}</h5>
-                <span className='price__details'>{convertToReal(price)}</span>
+                <div className='price__details'>
+                    {/* Preço total do produto */}
+                    <span className='price__price'>{functions.convertToReal(price)}</span>
+                    {/* Parcelamento */}
+                    <span className='price__installments'>{installment}X {functions.convertToReal(installmentPrice)}</span>
+                </div>
             </div>
         </a>
     );

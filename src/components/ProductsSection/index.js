@@ -34,9 +34,22 @@ export const Products = () => {
             const { productName, link } = response;
             const [img1, img2] = response.items[0].images;
             const { Price } = response.items[0].sellers[0].commertialOffer;
+            const { Installments } = response.items[0].sellers[0].commertialOffer;
             return (
                 <li key={index}>
-                    <CardProduct link={link} image1={img1.imageUrl} image2={img2.imageUrl} name={productName} price={Price} />
+                    <CardProduct
+                        link={link}
+                        image1={img1.imageUrl}
+                        image2={img2.imageUrl}
+                        name={productName}
+                        price={Price}
+                        // Verifica se há método de parcelamento
+                        // Caso o array installment vier null, o número de parcelas será setado para 2
+                        // E o preço da parcela será o preço total dividido por 2
+                        // Apenas para fins visuais
+                        installment={Installments.length >= 1 ? Installments[1].NumberOfInstallments : 2}
+                        installmentPrice={Installments.length >= 1 ? Installments[1].Value : Price / 2}
+                    />
                 </li>
             );
         });

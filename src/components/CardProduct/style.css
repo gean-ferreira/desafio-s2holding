@@ -64,6 +64,16 @@
   text-align: start;
 }
 
+.price__details{
+  display: flex;
+  flex-direction: column;
+}
+
+.price__installments{
+  font-size: 12px;
+  font-weight: 300;
+}
+
 @media (min-width: 768px) {
   .details__product {
     position: static;
