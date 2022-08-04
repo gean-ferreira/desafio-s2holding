@@ -4,6 +4,7 @@ import './style.css';
 import { CardProduct } from '../CardProduct';
 import Carousel from 'nuka-carousel';
 import { isMobile } from '../../assets/scripts/functions';
+import { stylebuttons } from '../../assets/scripts/style';
 
 export const Products = () => {
     // Constante que armazenará todos os produtos
@@ -27,17 +28,6 @@ export const Products = () => {
     useEffect(() => {
         getAnswer();
     }, []);
-
-    // Estilização dos botões do Carousel
-    const stylebuttons = {
-        default: { fontSize: '35px', fontWeight: 'bold' },
-        rightButton: function () {
-            return { ...this.default, borderRadius: '50% 0 0 50%', padding: '10px 5px 10px 15px' };
-        },
-        leftButton: function () {
-            return { ...this.default, borderRadius: '0 50% 50% 0', padding: '10px 15px  10px 5px ' };
-        },
-    };
 
     // Função lista cada produto
     function productList() {
