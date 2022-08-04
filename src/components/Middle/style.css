@@ -1,8 +1,6 @@
 .image__middle {
+  width: 100%;
   min-height: 400px;
-}
-
-.image__middle {
   position: relative;
   overflow: hidden;
   opacity: 1;
