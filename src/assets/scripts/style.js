@@ -10,6 +10,10 @@ const style = {
             return { ...this.default, borderRadius: '0 50% 50% 0', padding: '10px 15px  10px 5px ' };
         },
     },
+
+    sectionHeightOnLoading(isLoading) {
+        return isLoading ? '200px' : 'auto';
+    },
 };
 
 export default style;

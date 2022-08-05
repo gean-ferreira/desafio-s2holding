@@ -91,7 +91,7 @@ export const Products = () => {
     });
 
     return (
-        <main id='products' className='products__area container space'>
+        <main id='products' style={{ minHeight: style.sectionHeightOnLoading(loading) }} className='products__area container space'>
             <h1 className='title'>Produtos</h1>
             {loading ? <Loading /> : renderSection()}
         </main>
