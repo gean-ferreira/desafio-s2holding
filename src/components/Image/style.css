@@ -1,5 +1,5 @@
 .image-component {
-  animation: visible 1s ease-out;
+  animation: visible 2s ease-out;
 }
 
 @keyframes visible {
