@@ -10,14 +10,8 @@ export const Image = ({ classNameImg, src, alt, height, width }) => {
     }
 
     return (
-        <div onLoad={imgLoad}>
-            <img
-                height={height}
-                width={width}
-                className={`image-component${classNameImg ? ` ${classNameImg}` : ''}`}
-                src={src}
-                alt={alt}
-            />
+        <div onLoad={imgLoad} style={loading ? { height: parentHeight } : { height: 'auto' }}>
+            <img height={height} width={width} className={`image-component${classNameImg ? ` ${classNameImg}` : ''}`} src={src} alt={alt} />
         </div>
     );
 };
