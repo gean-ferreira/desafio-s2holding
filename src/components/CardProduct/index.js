@@ -11,7 +11,7 @@ export const CardProduct = ({ link, image1, image2, name, price, installment, in
                     <Image classNameImg={'image__product'} src={image1} alt={`Fotos de ${name}`} width={'100%'} height={'auto'} />
                 </div>
                 <div className='flip-back'>
-                    <Image classNameImg={'image__product'} src={image1} alt={`Fotos de ${name}`} width={'100%'} height={'auto'} />
+                    <Image classNameImg={'image__product'} src={image2} alt={`Fotos de ${name}`} width={'100%'} height={'auto'} />
                 </div>
             </div>
             {/* Imagem para dimensionar os flips */}
