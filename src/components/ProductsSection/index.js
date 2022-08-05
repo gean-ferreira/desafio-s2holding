@@ -4,21 +4,27 @@ import './style.css';
 import { CardProduct } from '../CardProduct';
 import Carousel from 'nuka-carousel';
 import { functions, style } from '../../assets/scripts/index';
+import { Loading } from '../Loading';
 
 export const Products = () => {
     // Constante que armazenará todos os produtos
     const [products, setProducts] = useState([]);
+    // Loading
+    const [loading, setLoading] = useState(false);
+    // Variável que determina se a sessão será renderizada como um Carousel ou por grid
     const [show, setShow] = useState(functions.isMobile());
     // Url fornecida pelo desafio
     const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fC:65&_from=1&_to=50';
 
     // Função que faz a requisição dos produtos
     const getAnswer = async () => {
+        setLoading(true);
         await axios({
             url: urlProducts,
             method: 'GET',
         }).then(response => {
             setProducts(response.data);
+            setLoading(false);
         });
     };
 
@@ -87,7 +93,7 @@ export const Products = () => {
     return (
         <main id='products' className='products__area container space'>
             <h1 className='title'>Produtos</h1>
-            {renderSection()}
+            {loading ? <Loading /> : renderSection()}
         </main>
     );
 };
