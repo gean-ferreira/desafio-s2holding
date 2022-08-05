@@ -1,4 +1,7 @@
-/* Container dos produtos */
+#products {
+  animation: up 1s ease-out;
+}
+
 .products__menu-list li {
   border: 1px solid gray;
 }

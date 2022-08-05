@@ -1,3 +1,7 @@
+#middle {
+  animation: up 1s ease-out;
+}
+
 .image__middle {
   width: 100%;
   min-height: 400px;

@@ -1,3 +1,7 @@
-.description__title{
-    text-align: justify;
+#title {
+  animation: up 1s ease-out;
+}
+
+.description__title {
+  text-align: justify;
 }
