@@ -14,7 +14,7 @@ export const Products = () => {
     // Variável que determina se a sessão será renderizada como um Carousel ou por grid
     const [show, setShow] = useState(functions.isMobile());
     // Url fornecida pelo desafio
-    const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fC:65&_from=1&_to=50';
+    const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fq=:65&_from=1&_to=50';
 
     // Função que faz a requisição dos produtos
     const getAnswer = async () => {

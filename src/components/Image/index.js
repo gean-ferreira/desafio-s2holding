@@ -6,7 +6,7 @@ export const Image = ({ classNameImg, src, alt, height, width }) => {
 
     // Esta função é apenas chamada quando a imagem é carregada
     function imgLoad() {
-        loading.current(false);
+        loading.current = false;
     }
 
     return (
