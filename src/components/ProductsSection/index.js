@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import './style.css';
 import { useViewPort } from '../../assets/scripts/hooks/useViewPort';
 import { CardProduct } from '../CardProduct';
@@ -12,28 +11,19 @@ export const Products = () => {
     // Constante que armazenará todos os produtos
     const [products, setProducts] = useState([]);
     // Loading
-    const [loading, setLoading] = useState(false);
-    // Variável que determina se a sessão será renderizada como um Carousel ou por grid
-    const [show, setShow] = useState(functions.isMobile());
+    const [loading, setLoading] = useState(true);
     // Url fornecida pelo desafio
     const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fq=:65&_from=1&_to=50';
-
-    // Função que faz a requisição dos produtos
-    const getAnswer = async () => {
-        setLoading(true);
-        await axios({
-            url: urlProducts,
-            method: 'GET',
-        }).then(response => {
-            setProducts(response.data);
-            setLoading(false);
-        });
-    };
 
     // Ciclo de vida do React
     // Executa esta função toda vez que o componente for carregado
     useEffect(() => {
-        getAnswer();
+        // Requisição dos produtos
+        fetch(urlProducts)
+            .then(response => response.json())
+            .then(data => setProducts(data))
+            .catch(error => console.log(error))
+            .finally(() => setLoading(false));
     }, []);
 
     // Função lista cada produto
