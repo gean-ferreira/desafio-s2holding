@@ -3,14 +3,14 @@ import img1 from '../../assets/imgs/middle/middle-1.jpg';
 import img2 from '../../assets/imgs/middle/middle-2.jpg';
 import img3 from '../../assets/imgs/middle/middle-3.jpg';
 import img4 from '../../assets/imgs/middle/middle-4.jpg';
-import { functions, style } from '../../assets/scripts/index';
+import { style } from '../../assets/scripts/index';
 import Carousel from 'nuka-carousel';
-import { useState } from 'react';
+import { useViewPort } from '../../assets/scripts/hooks/useViewPort';
 
 export const Middle = () => {
+    const { isMobile } = useViewPort();
     // Array com o caminho relativo das imagens
     const imgsMiddle = [img1, img2, img3, img4];
-    const [show, setShow] = useState(functions.isMobile());
 
     // Condicional que adiciona classe global para manipular o estilo do item
     const inTheLeft = index => (index % 2 ? '' : ' justify-content-end');
@@ -36,7 +36,7 @@ export const Middle = () => {
     // Mobile: a função renderiza as imagens dentro de uma lib de Carousel
     // Desktop: renderiza a sessão em duas colunas
     function renderSection() {
-        return show ? (
+        return isMobile ? (
             <Carousel
                 autoplay={true}
                 dragThreshold={0.1}
@@ -55,11 +55,6 @@ export const Middle = () => {
             <ul className='middle__menu-list px-1'>{itemsMiddle()}</ul>
         );
     }
-
-    // Função que observa se o usuário irá diminuir a tela de tamanho
-    window.addEventListener('resize', () => {
-        setShow(functions.isMobile());
-    });
 
     return (
         <section id='middle' className='middle__area container space'>

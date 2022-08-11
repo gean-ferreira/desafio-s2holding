@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css';
+import { useViewPort } from '../../assets/scripts/hooks/useViewPort';
 import { CardProduct } from '../CardProduct';
 import Carousel from 'nuka-carousel';
-import { functions, style } from '../../assets/scripts/index';
+import { style } from '../../assets/scripts/index';
 import { Loading } from '../Loading';
 
 export const Products = () => {
+    const { isMobile } = useViewPort();
     // Constante que armazenará todos os produtos
     const [products, setProducts] = useState([]);
     // Loading
@@ -65,7 +67,7 @@ export const Products = () => {
     // iPad: renderiza 3 produtos por linha
     // Desktop: renderiza 4 produtos por linha
     function renderSection() {
-        return show ? (
+        return isMobile ? (
             <Carousel
                 autoplay={true}
                 dragThreshold={0.1}
@@ -84,11 +86,6 @@ export const Products = () => {
             <ul className='products__menu-list px-1'>{productList()}</ul>
         );
     }
-
-    // Função que observa se o usuário irá diminuir a tela de tamanho
-    window.addEventListener('resize', () => {
-        setShow(functions.isMobile());
-    });
 
     return (
         <main id='products' style={{ minHeight: style.sectionHeightOnLoading(loading) }} className='products__area container space'>
