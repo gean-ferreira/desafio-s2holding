@@ -6,6 +6,14 @@
   border: 1px solid gray;
 }
 
+/* Elemento que o IntersectionObserver observa */
+#ward {
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 768px) {
   /* Os produtos irão ser apresentados de 3 em 3 na tela */
   .products__menu-list {

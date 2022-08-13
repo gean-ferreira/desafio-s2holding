@@ -8,23 +8,35 @@ import { Loading } from '../Loading';
 
 export const Products = () => {
     const { isMobile } = useViewPort();
-    // Constante que armazenará todos os produtos
+    // Vetor dos produtos
     const [products, setProducts] = useState([]);
+    // Variavel que determina quantos produtos irão ser renderizados na aplicação
+    // a partir da tela > 768px
+    const [currentProducts, setCurrentProducts] = useState(8);
     // Loading
     const [loading, setLoading] = useState(true);
+    // Loading do InfinityScroll
+    const [infinityLoading, setInfinityLoading] = useState(null);
     // Url fornecida pelo desafio
-    const urlProducts = 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fq=:65&_from=1&_to=50';
+    // Caso seja desktop irá renderizar de forma dinamica por meio do infinityScroll
+    const urlProducts = isMobile
+        ? 'https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fq=:65&_from=1&_to=50'
+        : `https://cantao.vtexcommercestable.com.br/api/catalog_system/pub/products/search?fq=:65&_from=1&_to=${currentProducts}`;
 
     // Ciclo de vida do React
     // Executa esta função toda vez que o componente for carregado
     useEffect(() => {
+        setInfinityLoading(true);
         // Requisição dos produtos
         fetch(urlProducts)
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.log(error))
-            .finally(() => setLoading(false));
-    }, []);
+            .finally(() => {
+                setLoading(false);
+                setInfinityLoading(false);
+            });
+    }, [currentProducts, urlProducts]);
 
     // Função lista cada produto
     function productList() {
@@ -77,10 +89,38 @@ export const Products = () => {
         );
     }
 
+    // O infirtyScroll é renderizado apenas para viewports >768px
+    function renderWard() {
+        return !isMobile && <div id='ward'>{infinityLoading && <Loading />}</div>;
+    }
+
+    // Hook InfinityScroll
+    useEffect(() => {
+        if (products.length && !isMobile) {
+            const intersectionObserver = new IntersectionObserver(entries => {
+                if (entries.some(entry => entry.isIntersecting)) {
+                    // API apenas renderiza máximo 50 produtos
+                    // Por isso, caso o valor corrente da variável currentProducts for maior que 42
+                    // No próximo render, irá ser 50
+                    setCurrentProducts(currentProducts => (currentProducts > 42 ? 50 : currentProducts + 8));
+                }
+            });
+            intersectionObserver.observe(document.getElementById('ward'));
+            return () => intersectionObserver.disconnect();
+        }
+    }, [products.length, isMobile]);
+
     return (
         <main id='products' style={{ minHeight: style.sectionHeightOnLoading(loading) }} className='products__area container space'>
             <h1 className='title'>Produtos</h1>
-            {loading ? <Loading /> : renderSection()}
+            {loading ? (
+                <Loading />
+            ) : (
+                <>
+                    {renderSection()}
+                    {renderWard()}
+                </>
+            )}
         </main>
     );
 };
